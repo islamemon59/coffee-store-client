@@ -3,7 +3,7 @@ import { AuthContext } from "../Context/Context";
 import Swal from "sweetalert2";
 
 const SignUp = () => {
-  const { createUser } = use(AuthContext);
+  const { createUser, setCurrentUser } = use(AuthContext);
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -16,12 +16,16 @@ const SignUp = () => {
     console.log(email, password, userData);
     createUser(email, password)
       .then((result) => {
+        const user = result.user;
+        setCurrentUser(user)
+        const creationTime = result.user.metadata.creationTime
+        const lastSignInTime = result.user.metadata.lastSignInTime
         fetch("http://localhost:4000/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({...userData, email}),
+          body: JSON.stringify({email, ...userData, creationTime, lastSignInTime}),
         })
           .then((res) => res.json())
           .then((data) => {
