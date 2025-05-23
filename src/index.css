@@ -9,9 +9,10 @@
   default: true;
   --color-base-200: #eceae3;
   --color-base-300: #e3b577;
-  --color-base-400: #d2b48c;
+  --color-primary-content: #d2b48c;
   --color-base-500: #3c393b;
-  --color-base-600: #ea4744;
+  --color-error: #ea4744;
+  --color-accent-content: #F5F4F1;
   --color-primary: #331a15;
   --color-secondary: #1B1A1A;
   --color-accent: #374151;

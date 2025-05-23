@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 import Swal from "sweetalert2";
 
 const AddCoffee = () => {
@@ -32,20 +33,23 @@ const AddCoffee = () => {
   };
 
   return (
-    <div>
-      <div className="p-12 space-y-4">
-        <h1 className="text-6xl font-semibold">Add Coffee</h1>
-        <p>
+<div className="max-w-6xl mx-auto my-16">
+  <Link to="/"><h1 className="mb-10 text-primary font-semibold rancho text-2xl">Back to Home</h1></Link>
+  
+      <div className=" bg-accent-content rounded-md">
+      <div className="p-16 space-y-4">
+        <h1 className="text-6xl font-semibold rancho text-center text-primary">Add Coffee</h1>
+        <p className="text-center text-accent">
           It is a long established fact that a reader will be distraceted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a more-or-less normal distribution of
           letters, as opposed to using Content here.
         </p>
       </div>
-      <form onSubmit={handleAddCoffee}>
+      <form onSubmit={handleAddCoffee} className="px-16 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-            <label className="label">Name</label>
+          <fieldset className="fieldset rounded-box">
+            <label className="label font-bold text-secondary text-[16px]">Name</label>
             <input
               type="text"
               className="input w-full"
@@ -53,8 +57,8 @@ const AddCoffee = () => {
               placeholder="Enter coffee name"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-            <label className="label">Quantity</label>
+          <fieldset className="fieldset rounded-box">
+            <label className="label font-bold text-secondary text-[16px]">Quantity</label>
             <input
               type="text"
               className="input w-full"
@@ -62,8 +66,8 @@ const AddCoffee = () => {
               placeholder="Enter coffee Quantity"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-            <label className="label">Supplier</label>
+          <fieldset className="fieldset rounded-box">
+            <label className="label font-bold text-secondary text-[16px]">Supplier</label>
             <input
               type="text"
               className="input w-full"
@@ -71,8 +75,8 @@ const AddCoffee = () => {
               placeholder="Enter coffee supplier"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-            <label className="label">Taste</label>
+          <fieldset className="fieldset rounded-box">
+            <label className="label font-bold text-secondary text-[16px]">Taste</label>
             <input
               type="text"
               className="input w-full"
@@ -80,8 +84,8 @@ const AddCoffee = () => {
               placeholder="Enter coffee taste"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-            <label className="label">Price</label>
+          <fieldset className="fieldset rounded-box">
+            <label className="label font-bold text-secondary text-[16px]">Price</label>
             <input
               type="text"
               className="input w-full"
@@ -89,8 +93,8 @@ const AddCoffee = () => {
               placeholder="Enter coffee price"
             />
           </fieldset>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-            <label className="label">Details</label>
+          <fieldset className="fieldset rounded-box">
+            <label className="label font-bold text-secondary text-[16px]">Details</label>
             <input
               type="text"
               className="input w-full"
@@ -99,8 +103,8 @@ const AddCoffee = () => {
             />
           </fieldset>
         </div>
-        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4 my-6">
-          <label className="label">Details</label>
+        <fieldset className="fieldset rounded-box my-6">
+          <label className="label font-bold text-secondary text-[16px]">Details</label>
           <input
             type="text"
             className="input w-full"
@@ -108,11 +112,12 @@ const AddCoffee = () => {
             placeholder="Enter photo URL"
           />
         </fieldset>
-        <button type="submit" className="btn btn-block">
+        <button type="submit" className="btn w-full rancho bg-base-300 text-base-200 border-2 border-primary hover:text-primary hover:bg-base-200">
           Add Coffee
         </button>
       </form>
     </div>
+</div>
   );
 };
 
