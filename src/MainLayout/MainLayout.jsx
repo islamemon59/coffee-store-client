@@ -1,10 +1,14 @@
 import React from 'react';
 import { Outlet } from 'react-router';
+import Header from '../Component/Header';
+import Banner from '../Component/Banner';
 
 const MainLayout = () => {
     return (
         <div>
-            <div className='max-w-7xl mx-auto'>
+            <Header></Header>
+            <Banner></Banner>
+            <div>
                 <Outlet></Outlet>
             </div>
         </div>
