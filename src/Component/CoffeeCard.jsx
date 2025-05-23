@@ -40,7 +40,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
   };
 
   return (
-    <div className="card card-side bg-accent-content shadow-sm border-1 px-4 py-8 border-gray-300 transition duration-600 hover:scale-105">
+    <div className="card card-side bg-accent-content shadow-sm border-1 px-4 py-8 border-gray-300 transition duration-600 hover:scale-110 hover:shadow-xl">
       <figure>
         <img src={photo} alt="coffee" />
       </figure>

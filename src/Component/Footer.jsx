@@ -5,12 +5,12 @@ import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 const Footer = () => {
   return (
     <div>
-      <section className="bg-[url('more/13.jpg')] bg-cover bg-center py-26 px-4">
+      <section className="bg-[url('/more/13.jpg')] bg-cover bg-center py-26 px-4">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
           {/* Left Column */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src="logo1.png" alt="Logo" className="h-12" />
+              <img src="/logo1.png" alt="Logo" className="h-12" />
               <h2 className="text-5xl font-bold text-primary rancho">
                 Espresso Emporium
               </h2>

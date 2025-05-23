@@ -11,6 +11,7 @@ import Home from './Component/Home.jsx';
 import AddCoffee from './Component/AddCoffee.jsx';
 import UpdateCoffee from './Component/UpdateCoffee.jsx';
 import ViewDetails from './Component/ViewDetails.jsx';
+import HomePageNot from './Component/HomePageNot.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "*",
+    Component: HomePageNot
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
