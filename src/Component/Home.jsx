@@ -165,144 +165,145 @@ const Home = () => {
         <div className="mt-20">
           <div className="text-center py-6">
             <motion.p
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.4,
-            x: { type: spring, stiffness: 60 },
-            opacity: { duration: 0.6 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{
+                delay: 0.4,
+                x: { type: spring, stiffness: 60 },
+                opacity: { duration: 0.6 },
+                ease: "easeIn",
+                duration: 1,
+              }}
               className="
             text-accent"
             >
               Follow Us Now
             </motion.p>
             <motion.h1
-                      initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.4,
-            x: { type: spring, stiffness: 60 },
-            opacity: { duration: 0.6 },
-            ease: "easeIn",
-            duration: 1,
-          }}
-             className="text-[55px] text-primary rancho">
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{
+                delay: 0.4,
+                x: { type: spring, stiffness: 60 },
+                opacity: { duration: 0.6 },
+                ease: "easeIn",
+                duration: 1,
+              }}
+              className="text-[55px] text-primary rancho"
+            >
               Follow on Instagram
             </motion.h1>
           </div>
 
           <section className="grid md:grid-cols-3 grid-cols-1 lg:grid-cols-4 gap-5 max-w-6xl mx-auto justify-center">
             <motion.img
-                      initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.4,
-            x: { type: spring, stiffness: 60 },
-            opacity: { duration: 0.6 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{
+                delay: 0.4,
+                x: { type: spring, stiffness: 60 },
+                opacity: { duration: 0.6 },
+                ease: "easeIn",
+                duration: 1,
+              }}
               className="w-full object-cover "
               src="cups/Rectangle 9.png"
               alt="cups"
             />
             <motion.img
-                      initial={{ y: -100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{
-            delay: 0.4,
-            y: { type: spring, stiffness: 60 },
-            opacity: { duration: 0.6 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+              initial={{ y: -100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                delay: 0.4,
+                y: { type: spring, stiffness: 60 },
+                opacity: { duration: 0.6 },
+                ease: "easeIn",
+                duration: 1,
+              }}
               className="w-full object-cover "
               src="cups/Rectangle 10.png"
               alt="cups"
             />
             <motion.img
-                      initial={{ y: -100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{
-            delay: 0.4,
-            y: { type: spring, stiffness: 60 },
-            opacity: { duration: 0.6 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+              initial={{ y: -100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                delay: 0.4,
+                y: { type: spring, stiffness: 60 },
+                opacity: { duration: 0.6 },
+                ease: "easeIn",
+                duration: 1,
+              }}
               className="w-full object-cover "
               src="cups/Rectangle 11.png"
               alt="cups"
             />
             <motion.img
-                      initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.4,
-            x: { type: spring, stiffness: 60 },
-            opacity: { duration: 0.6 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{
+                delay: 0.4,
+                x: { type: spring, stiffness: 60 },
+                opacity: { duration: 0.6 },
+                ease: "easeIn",
+                duration: 1,
+              }}
               className="w-full object-cover "
               src="cups/Rectangle 12.png"
               alt="cups"
             />
             <motion.img
-                      initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.4,
-            x: { type: spring, stiffness: 60 },
-            opacity: { duration: 0.6 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{
+                delay: 0.4,
+                x: { type: spring, stiffness: 60 },
+                opacity: { duration: 0.6 },
+                ease: "easeIn",
+                duration: 1,
+              }}
               className="w-full object-cover "
               src="cups/Rectangle 13.png"
               alt="cups"
             />
             <motion.img
-                      initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{
-            delay: 0.4,
-            y: { type: spring, stiffness: 60 },
-            opacity: { duration: 0.6 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                delay: 0.4,
+                y: { type: spring, stiffness: 60 },
+                opacity: { duration: 0.6 },
+                ease: "easeIn",
+                duration: 1,
+              }}
               className="w-full object-cover "
               src="cups/Rectangle 14.png"
               alt="cups"
             />
             <motion.img
-                      initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{
-            delay: 0.4,
-            y: { type: spring, stiffness: 60 },
-            opacity: { duration: 0.6 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                delay: 0.4,
+                y: { type: spring, stiffness: 60 },
+                opacity: { duration: 0.6 },
+                ease: "easeIn",
+                duration: 1,
+              }}
               className="w-full object-cover "
               src="cups/Rectangle 15.png"
               alt="cups"
             />
             <motion.img
-                      initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.4,
-            x: { type: spring, stiffness: 60 },
-            opacity: { duration: 0.6 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+              initial={{ x: 100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{
+                delay: 0.4,
+                x: { type: spring, stiffness: 60 },
+                opacity: { duration: 0.6 },
+                ease: "easeIn",
+                duration: 1,
+              }}
               className="w-full object-cover "
               src="cups/Rectangle 16.png"
               alt="cups"

@@ -10,7 +10,7 @@ const Banner = () => {
         backgroundImage: "url(more/3.png)",
       }}
     >
-      <div className="hero-overlay flex justify-end md:px-20">
+      <div className="hero-overlay flex justify-end md:px-20 overflow-y-hidden">
         <div className="hero-content text-neutral-content">
           <div className="max-w-5xl text-start">
             <motion.h1
@@ -28,7 +28,7 @@ const Banner = () => {
               Would you like a Cup of Delicious Coffee?
             </motion.h1>
             <motion.p
-              initial={{ x: 310, opacity: 0 }}
+              initial={{ x: 300, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{
                 delay: 0.4,
@@ -43,7 +43,12 @@ const Banner = () => {
               beautiful moments and make them memorable.
             </motion.p>
             <motion.button
-              initial={{ x: 320, opacity: 0 }}
+              whileHover={{
+                scale: 1.2,
+                transition: { duration: 0.6 },
+              }}
+              whileTap={{ scale: 0.9 }}
+              initial={{ x: 300, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{
                 delay: 0.6,
