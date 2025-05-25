@@ -22,7 +22,13 @@ const SignUp = () => {
         const creationTime = result.user.metadata.creationTime;
         const lastSignInTime = result.user.metadata.lastSignInTime;
 
-        axios.post("http://localhost:4000/users", {email, ...userData, creationTime, lastSignInTime,})
+        axios
+          .post("http://localhost:4000/users", {
+            email,
+            ...userData,
+            creationTime,
+            lastSignInTime,
+          })
           .then((data) => {
             if (data.data.insertedId) {
               Swal.fire({
@@ -60,59 +66,61 @@ const SignUp = () => {
   };
 
   return (
-    <div className="card bg-base-100 mx-auto max-w-md shrink-0 shadow-2xl mt-10">
-      <div className="card-body">
-        <h1 className="text-5xl font-bold">Sign Up now!</h1>
-        <form onSubmit={handleSignUp} className="fieldset w-full">
-          <label className="label">Name</label>
-          <input
-            type="text"
-            className="input w-full"
-            name="name"
-            placeholder="Name"
-          />
-          <label className="label">Address</label>
-          <input
-            type="text"
-            className="input w-full"
-            name="address"
-            placeholder="Address"
-          />
-          <label className="label">Phone</label>
-          <input
-            type="text"
-            className="input w-full"
-            name="phone"
-            placeholder="Phone"
-          />
-          <label className="label">Photo</label>
-          <input
-            type="text"
-            className="input w-full"
-            name="photo"
-            placeholder="Photo URL"
-          />
-          <label className="label">Email</label>
-          <input
-            type="email"
-            className="input w-full"
-            name="email"
-            placeholder="Email"
-          />
-          <label className="label">Password</label>
-          <input
-            type="password"
-            className="input w-full"
-            name="password"
-            placeholder="Password"
-          />
-          <div>
-            <a className="link link-hover">Forgot password?</a>
-          </div>
-          <button type="submit" className="btn btn-neutral mt-4">
-            Sign up
-          </button>
-        </form>
+    <div className=" items-center min-h-screen flex justify-center">
+      <div className="card bg-base-200 sm:w-md w-[300px] my-10 shrink-0 shadow-xl">
+        <div className="card-body">
+          <h1 className="sm:text-5xl text-4xl font-bold text-center rancho text-primary">Sign Up now!</h1>
+          <form onSubmit={handleSignUp} className="fieldset w-full">
+            <label className="label">Name</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="name"
+              placeholder="Name"
+            />
+            <label className="label">Address</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="address"
+              placeholder="Address"
+            />
+            <label className="label">Phone</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="phone"
+              placeholder="Phone"
+            />
+            <label className="label">Photo</label>
+            <input
+              type="text"
+              className="input w-full"
+              name="photo"
+              placeholder="Photo URL"
+            />
+            <label className="label">Email</label>
+            <input
+              type="email"
+              className="input w-full"
+              name="email"
+              placeholder="Email"
+            />
+            <label className="label">Password</label>
+            <input
+              type="password"
+              className="input w-full"
+              name="password"
+              placeholder="Password"
+            />
+            <div>
+              <a className="link link-hover">Forgot password?</a>
+            </div>
+            <button type="submit" className="btn btn-neutral mt-4 rancho">
+              Sign up
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

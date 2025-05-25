@@ -11,22 +11,25 @@ import Loading from "./Loading";
 const Home = () => {
   // const initialCoffees = useLoaderData();
 
-  const {isPending, data:coffees, refetch} = useQuery({
-    queryKey: ['coffees'],
+  const {
+    isPending,
+    data: coffees,
+    refetch,
+  } = useQuery({
+    queryKey: ["coffees"],
     queryFn: async () => {
       const res = await fetch("http://localhost:4000/coffees");
-      return res.json()
-    }
-  })
+      return res.json();
+    },
+  });
   //   console.log(data);
   // const [remainingCoffee, setRemainingCoffee ] = useState(data);
   // console.log(remainingCoffee);
-// 
+  //
 
-  if(isPending){
-    return <Loading></Loading>
+  if (isPending) {
+    return <Loading></Loading>;
   }
-
 
   return (
     <div>
@@ -173,8 +176,8 @@ const Home = () => {
           {coffees?.map((coffee) => (
             <CoffeeCard
               key={coffee._id}
-            //  remainingCoffee={remainingCoffee}
-             refetch={refetch}
+              //  remainingCoffee={remainingCoffee}
+              refetch={refetch}
               // setCoffees={setCoffees}
               // setRemainingCoffee={setRemainingCoffee}
               coffee={coffee}
@@ -214,119 +217,135 @@ const Home = () => {
             </motion.h1>
           </div>
 
-          <section className="grid md:grid-cols-3 grid-cols-1 lg:grid-cols-4 gap-5 max-w-6xl mx-auto justify-center overflow-hidden">
-            <motion.img
-              initial={{ x: -100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{
-                delay: 0.4,
-                x: { type: spring, stiffness: 60 },
-                opacity: { duration: 0.6 },
-                ease: "easeIn",
-                duration: 1,
-              }}
-              className="w-full object-cover overflow-hidden"
-              src="cups/Rectangle 9.png"
-              alt="cups"
-            />
-            <motion.img
-              initial={{ y: -100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{
-                delay: 0.4,
-                y: { type: spring, stiffness: 60 },
-                opacity: { duration: 0.6 },
-                ease: "easeIn",
-                duration: 1,
-              }}
-              className="w-full object-cover overflow-hidden"
-              src="cups/Rectangle 10.png"
-              alt="cups"
-            />
-            <motion.img
-              initial={{ y: -100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{
-                delay: 0.4,
-                y: { type: spring, stiffness: 60 },
-                opacity: { duration: 0.6 },
-                ease: "easeIn",
-                duration: 1,
-              }}
-              className="w-full object-cover overflow-hidden"
-              src="cups/Rectangle 11.png"
-              alt="cups"
-            />
-            <motion.img
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{
-                delay: 0.4,
-                x: { type: spring, stiffness: 60 },
-                opacity: { duration: 0.6 },
-                ease: "easeIn",
-                duration: 1,
-              }}
-              className="w-full object-cover overflow-hidden"
-              src="cups/Rectangle 12.png"
-              alt="cups"
-            />
-            <motion.img
-              initial={{ x: -100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{
-                delay: 0.4,
-                x: { type: spring, stiffness: 60 },
-                opacity: { duration: 0.6 },
-                ease: "easeIn",
-                duration: 1,
-              }}
-              className="w-full object-cover overflow-hidden"
-              src="cups/Rectangle 13.png"
-              alt="cups"
-            />
-            <motion.img
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{
-                delay: 0.4,
-                y: { type: spring, stiffness: 60 },
-                opacity: { duration: 0.6 },
-                ease: "easeIn",
-                duration: 1,
-              }}
-              className="w-full object-cover overflow-hidden"
-              src="cups/Rectangle 14.png"
-              alt="cups"
-            />
-            <motion.img
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{
-                delay: 0.4,
-                y: { type: spring, stiffness: 60 },
-                opacity: { duration: 0.6 },
-                ease: "easeIn",
-                duration: 1,
-              }}
-              className="w-full object-cover overflow-hidden"
-              src="cups/Rectangle 15.png"
-              alt="cups"
-            />
-            <motion.img
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{
-                delay: 0.4,
-                x: { type: spring, stiffness: 60 },
-                opacity: { duration: 0.6 },
-                ease: "easeIn",
-                duration: 1,
-              }}
-              className="w-full object-cover overflow-hidden"
-              src="cups/Rectangle 16.png"
-              alt="cups"
-            />
+          <section className="grid md:grid-cols-3 grid-cols-1 lg:grid-cols-4 gap-6 max-w-6xl mx-auto justify-center pb-10">
+            <div className="hover:scale-110 duration-600 hover:shadow-xl">
+              <motion.img
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.4,
+                  x: { type: spring, stiffness: 60 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeIn",
+                  duration: 1,
+                }}
+                className="w-full object-cover overflow-hidden"
+                src="cups/Rectangle 9.png"
+                alt="cups"
+              />
+            </div>
+            <div className="hover:scale-110 duration-600 hover:shadow-xl">
+              <motion.img
+                initial={{ y: -100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.4,
+                  y: { type: spring, stiffness: 60 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeIn",
+                  duration: 1,
+                }}
+                className="w-full object-cover overflow-hidden"
+                src="cups/Rectangle 10.png"
+                alt="cups"
+              />
+            </div>
+            <div className="hover:scale-110 duration-600 hover:shadow-xl">
+              <motion.img
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.4,
+                  y: { type: spring, stiffness: 60 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeIn",
+                  duration: 1,
+                }}
+                className="w-full object-cover overflow-hidden"
+                src="cups/Rectangle 11.png"
+                alt="cups"
+              />
+            </div>
+            <div className="hover:scale-110 duration-600 hover:shadow-xl">
+              <motion.img
+                initial={{ x: 100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.4,
+                  x: { type: spring, stiffness: 60 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeIn",
+                  duration: 1,
+                }}
+                className="w-full object-cover overflow-hidden"
+                src="cups/Rectangle 12.png"
+                alt="cups"
+              />
+            </div>
+            <div className="hover:scale-110 duration-600 hover:shadow-xl">
+              <motion.img
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.4,
+                  x: { type: spring, stiffness: 60 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeIn",
+                  duration: 1,
+                }}
+                className="w-full object-cover overflow-hidden"
+                src="cups/Rectangle 13.png"
+                alt="cups"
+              />
+            </div>
+            <div className="hover:scale-110 duration-600 hover:shadow-xl">
+              <motion.img
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.4,
+                  y: { type: spring, stiffness: 60 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeIn",
+                  duration: 1,
+                }}
+                className="w-full object-cover overflow-hidden"
+                src="cups/Rectangle 14.png"
+                alt="cups"
+              />
+            </div>
+            <div className="hover:scale-110 duration-600 hover:shadow-xl">
+              <motion.img
+                initial={{ y: -100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.4,
+                  y: { type: spring, stiffness: 60 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeIn",
+                  duration: 1,
+                }}
+                className="w-full object-cover overflow-hidden"
+                src="cups/Rectangle 15.png"
+                alt="cups"
+              />
+            </div>
+            <div className="hover:scale-110 duration-600 hover:shadow-xl">
+              <motion.img
+                initial={{ x: 100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.4,
+                  x: { type: spring, stiffness: 60 },
+                  opacity: { duration: 0.6 },
+                  ease: "easeIn",
+                  duration: 1,
+                }}
+                className="w-full object-cover overflow-hidden"
+                src="cups/Rectangle 16.png"
+                alt="cups"
+              />
+            </div>
           </section>
         </div>
       </div>
