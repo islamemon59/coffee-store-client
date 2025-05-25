@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { AuthContext } from "../Context/Context";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const SignUp = () => {
   const { createUser, setCurrentUser } = use(AuthContext);
@@ -20,21 +21,10 @@ const SignUp = () => {
         setCurrentUser(user);
         const creationTime = result.user.metadata.creationTime;
         const lastSignInTime = result.user.metadata.lastSignInTime;
-        fetch("https://coffee-store-server-five.vercel.app/users", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            ...userData,
-            creationTime,
-            lastSignInTime,
-          }),
-        })
-          .then((res) => res.json())
+
+        axios.post("http://localhost:4000/users", {email, ...userData, creationTime, lastSignInTime,})
           .then((data) => {
-            if (data.insertedId) {
+            if (data.data.insertedId) {
               Swal.fire({
                 position: "top-center",
                 icon: "success",
@@ -43,8 +33,25 @@ const SignUp = () => {
                 timer: 1500,
               });
               console.log("after adding user data", data);
+              console.log("after added data response come", data.data);
             }
           });
+
+        // fetch("http://localhost:4000/users", {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify({
+        //     email,
+        //     ...userData,
+        //     creationTime,
+        //     lastSignInTime,
+        //   }),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //   });
         console.log(result);
       })
       .catch((error) => {

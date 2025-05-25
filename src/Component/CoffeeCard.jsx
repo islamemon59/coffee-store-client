@@ -3,7 +3,7 @@ import { FaEye, FaPen, FaTrash } from "react-icons/fa";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 
-const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
+const CoffeeCard = ({ coffee, refetch }) => {
   const { _id, name, price, photo, quantity } = coffee;
 
   const handleDelete = (_id) => {
@@ -18,7 +18,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://coffee-store-server-five.vercel.app/coffees/${_id}`, {
+        fetch(`http://localhost:4000/coffees/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -29,10 +29,11 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
                 text: "Your file has been deleted.",
                 icon: "success",
               });
-              const remainingCoffees = coffees.filter((cof) => cof._id != _id);
-              setCoffees(remainingCoffees);
+              // const remainingCoffees = remainingCoffee.filter((cof) => cof._id != _id);
+              // setRemainingCoffee(remainingCoffees);
+              refetch()
 
-              console.log("after deleted data", data);
+              // console.log("after deleted data", data);
             }
           });
       }

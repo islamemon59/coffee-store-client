@@ -1,15 +1,21 @@
 /* eslint-disable no-unused-vars */
-import React, { use, useState } from "react";
-import { useLoaderData } from "react-router";
+import React, { use, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Context/Context";
 import { auth } from "../Firebase/Firebase.config";
+import axios from "axios";
 
 const Users = () => {
-  const initialUsers = useLoaderData();
-  const [users, setUsers] = useState(initialUsers);
+  const [users, setUsers] = useState([]);
   const {deleteCurrentUser, currentUser} = use(AuthContext)
   const user = auth?.currentUser;
+
+  useEffect(() => {
+    axios.get("http://localhost:4000/users")
+    .then(data => {
+      setUsers(data.data)
+    })
+  }, [])
 
   const handleDeleteUser = (id) => {
     console.log(id);
@@ -23,7 +29,7 @@ const Users = () => {
   confirmButtonText: "Yes, delete it!"
 }).then((result) => {
   if (result.isConfirmed) {
-    fetch(`https://coffee-store-server-five.vercel.app/users/${id}`, {
+    fetch(`http://localhost:4000/users/${id}`, {
         method: "DELETE"
     })
     .then(res => res.json())

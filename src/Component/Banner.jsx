@@ -10,7 +10,7 @@ const Banner = () => {
         backgroundImage: "url(more/3.png)",
       }}
     >
-      <div className="hero-overlay flex justify-end md:px-20 overflow-y-hidden">
+      <div className="hero-overlay flex justify-end md:px-20 overflow-hidden">
         <div className="hero-content text-neutral-content">
           <div className="max-w-5xl text-start">
             <motion.h1
@@ -23,7 +23,7 @@ const Banner = () => {
                 ease: "easeIn",
                 duration: 1,
               }}
-              className="mb-5 text-5xl font-bold rancho"
+              className="mb-5 text-5xl font-bold rancho overflow-hidden"
             >
               Would you like a Cup of Delicious Coffee?
             </motion.h1>
@@ -36,7 +36,7 @@ const Banner = () => {
                 opacity: { duration: 0.6 },
                 ease: "easeIn",
               }}
-              className="mb-5 rancho"
+              className="mb-5 rancho overflow-hidden"
             >
               It's coffee time - Sip & Savor - Relaxation in every sip! Get the
               nostalgia back!! Your companion of every moment!!! Enjoy the
@@ -56,7 +56,7 @@ const Banner = () => {
                 opacity: { duration: 0.6 },
                 ease: "easeIn",
               }}
-              className="btn text-2xl bg-base-300 hover:bg-base-200 text-secondary border-none outline-none rounded-xs rancho"
+              className="btn text-2xl bg-base-300 hover:bg-base-200 text-secondary border-none outline-none rounded-xs rancho overflow-hidden"
             >
               Learn More
             </motion.button>

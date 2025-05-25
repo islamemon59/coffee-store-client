@@ -1,48 +1,51 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import MainLayout from "./MainLayout/MainLayout.jsx";
+import Home from "./Component/Home.jsx";
+import AddCoffee from "./Component/AddCoffee.jsx";
+import UpdateCoffee from "./Component/UpdateCoffee.jsx";
+import ViewDetails from "./Component/ViewDetails.jsx";
+import HomePageNot from "./Component/HomePageNot.jsx";
+import AuthProvider from "./Context/AuthProvider.jsx";
+import SignIn from "./Component/Signin.jsx";
+import SignUp from "./Component/SignUp.jsx";
+import Users from "./Component/Users.jsx";
 import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router";
-import MainLayout from './MainLayout/MainLayout.jsx';
-import Home from './Component/Home.jsx';
-import AddCoffee from './Component/AddCoffee.jsx';
-import UpdateCoffee from './Component/UpdateCoffee.jsx';
-import ViewDetails from './Component/ViewDetails.jsx';
-import HomePageNot from './Component/HomePageNot.jsx';
-import AuthProvider from './Context/AuthProvider.jsx';
-import SignIn from './Component/Signin.jsx';
-import SignUp from './Component/SignUp.jsx';
-import Users from './Component/Users.jsx';
-
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
+import Users2 from "./Component/Users2.jsx";
 const router = createBrowserRouter([
+  
   {
     path: "/",
     Component: MainLayout,
     children: [
       {
         index: true,
-        loader : () => fetch("https://coffee-store-server-five.vercel.app/coffees"),
-        Component:Home
+        loader: () => fetch("http://localhost:4000/coffees"),
+        Component: Home,
       },
       {
         path: "/addCoffee",
-        Component: AddCoffee
+        Component: AddCoffee,
       },
       {
         path: "/updateCoffee/:id",
-        loader: ({params}) => fetch(`https://coffee-store-server-five.vercel.app/coffees/${params.id}`),
-        Component: UpdateCoffee
+        loader: ({ params }) =>
+          fetch(`http://localhost:4000/coffees/${params.id}`),
+        Component: UpdateCoffee,
       },
       {
         path: "/details/:id",
-        loader: ({params}) => fetch(`https://coffee-store-server-five.vercel.app/coffees/${params.id}`),
+        // loader: ({params}) => fetch(`http://localhost:4000/coffees/${params.id}`),
         Component: ViewDetails,
       },
-            {
-        path:"/signin",
+      {
+        path: "/signin",
         Component: SignIn,
       },
       {
@@ -51,21 +54,25 @@ const router = createBrowserRouter([
       },
       {
         path: "/users",
-        loader: () => fetch("https://coffee-store-server-five.vercel.app/users"),
-        Component: Users,
-      }
-    ]
+        loader: () => fetch("http://localhost:4000/users"),
+        Component: Users2,
+      },
+    ],
   },
   {
     path: "*",
-    Component: HomePageNot
-  }
+    Component: HomePageNot,
+  },
 ]);
 
-createRoot(document.getElementById('root')).render(
+const queryClient = new QueryClient()
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router}></RouterProvider>
-    </AuthProvider>
-  </StrictMode>,
-)
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </AuthProvider>
+    </QueryClientProvider>
+  </StrictMode>
+);

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
@@ -11,17 +12,10 @@ const AddCoffee = () => {
     const newCoffee = Object.fromEntries(formData.entries());
     console.log(newCoffee);
 
-    fetch("https://coffee-store-server-five.vercel.app/coffees", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newCoffee),
-    })
-      .then((res) => res.json())
+    axios.post("http://localhost:4000/coffees", {...newCoffee})
       .then((data) => {
-        if (data.insertedId) {
-          console.log("new data added in our database", data);
+        if (data.data.insertedId) {
+          console.log("new data added in our database", data.data);
           Swal.fire({
             title: "Coffee added successfully!",
             icon: "success",

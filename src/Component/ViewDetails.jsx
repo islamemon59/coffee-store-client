@@ -1,11 +1,20 @@
-import React from "react";
-import { useLoaderData } from "react-router";
-import { Link } from "react-router";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router";
 
 const ViewDetails = () => {
-  const coffee = useLoaderData();
-  console.log(coffee);
-  const { photo, name, price, quantity, supplier, taste, details } = coffee;
+  const [coffee, setCoffee] = useState({})
+  const {photo, name, price, quantity, supplier, taste, details } = coffee;
+  const {id} = useParams()
+  console.log(id);
+
+  useEffect(() => {
+    axios.get(`http://localhost:4000/coffees/${id}`)
+    .then(data => {
+      setCoffee(data.data);
+    })
+  },[id])
+
   return (
     <div className="max-w-7xl mx-auto my-10">
       <Link to="/"><h1 className="mb-10 text-primary font-semibold rancho text-2xl">Back to Home</h1></Link>
