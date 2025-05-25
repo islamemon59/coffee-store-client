@@ -10,7 +10,7 @@ import UpdateCoffee from "./Component/UpdateCoffee.jsx";
 import ViewDetails from "./Component/ViewDetails.jsx";
 import HomePageNot from "./Component/HomePageNot.jsx";
 import AuthProvider from "./Context/AuthProvider.jsx";
-import SignIn from "./Component/Signin.jsx";
+// import SignIn from "./Component/Signin.jsx";
 import SignUp from "./Component/SignUp.jsx";
 import Users from "./Component/Users.jsx";
 import {
@@ -18,6 +18,7 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 import Users2 from "./Component/Users2.jsx";
+import SignIn from "./Component/SignIn.jsx";
 const router = createBrowserRouter([
   
   {
