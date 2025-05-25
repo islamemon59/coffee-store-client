@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { AuthContext } from "../Context/Context";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { Link } from "react-router";
 
 const SignUp = () => {
   const { createUser, setCurrentUser } = use(AuthContext);
@@ -23,7 +24,7 @@ const SignUp = () => {
         const lastSignInTime = result.user.metadata.lastSignInTime;
 
         axios
-          .post("http://localhost:4000/users", {
+          .post("https://coffee-store-server-five.vercel.app/users", {
             email,
             ...userData,
             creationTime,
@@ -43,7 +44,7 @@ const SignUp = () => {
             }
           });
 
-        // fetch("http://localhost:4000/users", {
+        // fetch("https://coffee-store-server-five.vercel.app/users", {
         //   method: "POST",
         //   headers: {
         //     "Content-Type": "application/json",
@@ -66,7 +67,8 @@ const SignUp = () => {
   };
 
   return (
-    <div className=" items-center min-h-screen flex justify-center">
+    <div className=" items-center min-h-screen flex justify-center flex-col">
+      <Link className="text-xl rancho text-primary font-bold text-shadow-xs text-shadow-base-300" to="/">Back to home</Link>
       <div className="card bg-base-200 sm:w-md w-[300px] my-10 shrink-0 shadow-xl">
         <div className="card-body">
           <h1 className="sm:text-5xl text-4xl font-bold text-center rancho text-primary">Sign Up now!</h1>

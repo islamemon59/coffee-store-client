@@ -12,7 +12,7 @@ const AddCoffee = () => {
     const newCoffee = Object.fromEntries(formData.entries());
     console.log(newCoffee);
 
-    axios.post("http://localhost:4000/coffees", {...newCoffee})
+    axios.post("https://coffee-store-server-five.vercel.app/coffees", {...newCoffee})
       .then((data) => {
         if (data.data.insertedId) {
           console.log("new data added in our database", data.data);

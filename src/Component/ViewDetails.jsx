@@ -9,7 +9,7 @@ const ViewDetails = () => {
   console.log(id);
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/coffees/${id}`)
+    axios.get(`https://coffee-store-server-five.vercel.app/coffees/${id}`)
     .then(data => {
       setCoffee(data.data);
     })

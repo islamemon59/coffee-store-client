@@ -7,7 +7,7 @@ const Users2 = () => {
 const {isPending, isError, error, data: users} = useQuery({
   queryKey: ['users'],
   queryFn: async () => {
-    const response = await fetch("http://localhost:4000/users");
+    const response = await fetch("https://coffee-store-server-five.vercel.app/users");
     return response.json()
   }
 })
@@ -15,7 +15,7 @@ const {isPending, isError, error, data: users} = useQuery({
     // const [users, setUsers] = useState([])
 
     // useEffect(() => {
-    //     fetch("http://localhost:4000/users")
+    //     fetch("https://coffee-store-server-five.vercel.app/users")
     //     .then(res => res.json())
     //     .then(data => {
     //         setUsers(data)
@@ -34,7 +34,7 @@ const {isPending, isError, error, data: users} = useQuery({
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/users/${id}`, {
+        fetch(`https://coffee-store-server-five.vercel.app/users/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

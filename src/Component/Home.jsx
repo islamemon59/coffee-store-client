@@ -18,7 +18,7 @@ const Home = () => {
   } = useQuery({
     queryKey: ["coffees"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:4000/coffees");
+      const res = await fetch("https://coffee-store-server-five.vercel.app/coffees");
       return res.json();
     },
   });

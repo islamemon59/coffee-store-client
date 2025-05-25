@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import { AuthContext } from "../Context/Context";
+import { Link } from "react-router";
 
 const SignIn = () => {
   const { signInUser } = use(AuthContext);
@@ -14,7 +15,7 @@ const SignIn = () => {
       .then((result) => {
         console.log(result.user);
         const lastSignInTime = result.user?.metadata?.lastSignInTime;
-        fetch("http://localhost:4000/users", {
+        fetch("https://coffee-store-server-five.vercel.app/users", {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -32,7 +33,8 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center min-h-screen flex-col">
+      <Link className="text-xl rancho text-primary font-bold text-shadow-xs text-shadow-base-300" to="/">Back to home</Link>
       <div className="card bg-base-200 sm:w-md w-[300px] my-10 shrink-0 shadow-xl">
         <div className="card-body">
           <h1 className="sm:text-5xl text-4xl font-bold text-center rancho text-primary">Sign In now!</h1>
